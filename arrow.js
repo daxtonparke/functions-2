@@ -93,4 +93,4 @@ const compareNums = (num1, num2) => Math.max(num1,num2)
 */
 
 const bestMovie = (title) => `${title} is the best movie ever!`
-console.log(bestMovie('the hobbit))
+console.log(bestMovie('the hobbit'))
