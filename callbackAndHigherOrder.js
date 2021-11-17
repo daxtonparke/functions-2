@@ -5,7 +5,12 @@
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-// CODE HERE
+// const multiply = (num1, num2, times()) => {
+// const times = ((num1, num2) =>
+//    num1 * num2
+// })
+
+const multiply = (num1, num2, cb) => cb(num1 * num2)
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -35,8 +40,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-// CODE HERE 
-
+const first = (arr,cb) => cb(arr[0])
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -55,8 +59,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-// CODE HERE
-
+const last = (arr, cb) => cb(arr[arr.length-1])
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -77,8 +80,11 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-// CODE HERE 
-
+const contains = (arr, name, cb) => {
+  if(arr.includes(name)){
+   cb(true)
+  }else {cb(false)}
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -102,8 +108,23 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   Hint: you can use a nested for loop to do this.
 */
 
-// CODE HERE
+const uniq = (arr) => {
+// const newarr = arr.map
+ for (i=0;i<arr.length;i++){
+   for(j=0;j<arr.length;j++){
+     console.log(`i =${arr[i]}  j=${arr[j]}`)
+     if (i !== j){
+     if(arr[i] === arr[j]){
+       arr.splice(i)
+     }
+     }
+     }
+   }
+ }
+//  cb(newarr)
 
+
+uniq(names)
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
