@@ -108,23 +108,40 @@ const contains = (arr, name, cb) => {
   Hint: you can use a nested for loop to do this.
 */
 
-const uniq = (arr) => {
-// const newarr = arr.map
- for (i=0;i<arr.length;i++){
-   for(j=0;j<arr.length;j++){
-     console.log(`i =${arr[i]}  j=${arr[j]}`)
-     if (i !== j){
-     if(arr[i] === arr[j]){
-       arr.splice(i)
+// const uniq = (arr) => {
+//  for (i=0;i<arr.length;i++){
+//    for(j=0;j<arr.length;j++){
+//      console.log(`i=${arr[i]}  j=${arr[j]}`)
+//      if (i !== j){
+//        if(arr[i] === arr[j]){
+//        arr.splice(j)
+//      }
+//      }
+//      }
+//    }
+//  }
+const uniq = (arr, cb) =>{
+   for (i=0;i<arr.length;i++){
+     for(j=0;j<arr.length;j++){
+      console.log(`i=${arr[i]}  j=${arr[j]}`)
+      if([i] !== [j]){
+        if (arr[i] === arr[j])
+        arr.splice(j,1)
+      }
      }
-     }
-     }
-   }
- }
-//  cb(newarr)
+    }
+    cb(arr)
+  }
+  const printUniqueArr = (uniqueArr) => {
+    console.log(`the new array without duplicates is ${uniqueArr}`)
+  }
+uniq(names, printUniqueArr)
+
+// const uniq = (arr, cb) => {
+//   arr.forEach((name, index){
+//   arr.forEach((name2, index2)
 
 
-uniq(names)
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
